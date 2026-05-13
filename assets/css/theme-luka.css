@@ -525,3 +525,44 @@ body.theme-luka strong {
     font-size: 13px;
   }
 }
+/* 论文列表：左侧文字 + 右侧图片 */
+.pub-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.pub-content {
+  flex: 1;
+  min-width: 200px;
+}
+
+.pub-image {
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.pub-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.pub-image img:hover {
+  transform: scale(1.02);
+}
+
+/* 手机端适配：图片显示在文字下方 */
+@media (max-width: 600px) {
+  .pub-row {
+    flex-direction: column;
+  }
+  .pub-image {
+    width: 100%;
+    max-width: 200px;
+    margin-top: 10px;
+  }
+}
